@@ -1,4 +1,4 @@
-import os
+import sys
 
 def leibniz_formula(iterations):
     result = 0.0
@@ -7,6 +7,13 @@ def leibniz_formula(iterations):
     return result * 4 
 
 if __name__ == "__main__":
-    iterations = int(os.getenv("N", 1000))
-    pi_approximation = leibniz_formula(iterations)
-    print(pi_approximation)
+    if len(sys.argv) >= 1:
+        iterations = sys.argv[1]
+    else:
+        iterations = "1000" 
+    try:
+        pi_approximation = leibniz_formula(int(iterations))
+        print(pi_approximation)
+    except ValueError:
+        print("Bad argument")
+        
