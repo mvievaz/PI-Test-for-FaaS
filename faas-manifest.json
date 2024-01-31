@@ -1,0 +1,6 @@
+{
+    "language": "python",
+    "requirementsFile": "requirements.txt",
+    "mainFile": "pi.py",
+    "arg": "10"
+}
